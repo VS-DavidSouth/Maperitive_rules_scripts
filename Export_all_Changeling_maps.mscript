@@ -1,0 +1,3 @@
+﻿run-script Scripts/Export_Changeling_Baltimore.mscript
+run-script Scripts/Export_Changeling_harbor.mscript
+run-script Scripts/Export_Changeling_inner_harbor.mscript

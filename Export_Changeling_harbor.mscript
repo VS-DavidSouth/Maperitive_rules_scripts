@@ -1,0 +1,9 @@
+﻿set-geo-bounds -76.6362188930777,39.2416502223682,-76.5696221917995,39.2914081971415
+set-print-bounds-geo
+zoom-bounds
+//export-svg file=output/Changeling_harbor.svg compatibility=Inkscape compress=false copy-images=true precision-typo=true
+   // zoom-bounds=???
+   //[map-scale=<map scale>]
+   //[scale=<scale>] 
+   
+export-bitmap file=output/Changeling_harbor.png

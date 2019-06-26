@@ -1,0 +1,4 @@
+﻿load-source "C:\Users\apddsouth\Documents\Maperitive-latest\maryland-latest.osm.pbf"
+load-source "C:\Users\apddsouth\Documents\Maperitive-latest\Maperitive_rules_scripts\Locations\Changeling_locations2.gpx"
+use-ruleset location="C:\Users\apddsouth\Documents\Maperitive-latest\Maperitive_rules_scripts\Changeling_map.mrules"
+apply-ruleset

@@ -1,0 +1,169 @@
+// Modified by Somniac Delusions
+// Originally from: https://wiki.openstreetmap.org/wiki/User:Andrewmk/Maperitive_Rules/BlackAndWhite
+
+features
+	points
+		// Note that the "Airport" symbol tells Maperitive that a GPSwaypoint
+		// is a door the the hedge.  
+		hedge : gpswaypoint[]
+		//point named : gpswaypoint[] NOT (name=unnamed OR symbol=Airport)
+		//point unnamed : gpswaypoint[] name=unnamed
+
+	lines
+		road named : highway AND (name OR ref)
+		road unnamed : highway AND NOT (name OR ref)	
+	areas
+		water : natural=water OR natural=wetland OR waterway=riverbank OR waterway=stream OR landuse=reservoir OR landuse=basin
+		city : place=town OR place=city 
+		building : building=yes
+		
+	neighborhood : node[place=neighbourhood] area[place=neighbourhood]
+	mercy : node[amenity=hospital] area[amenity=hospital]
+	// Regarding @isOneOf(...), it requires the first to be the general tag, the next two+ to be specific instances.
+	//hedge : @isOneOf(name, "Mercy Medical Center", "National Aquarium")
+	//hedge-b : building=yes  name="National Aquarium"
+	
+
+properties
+	map-background-color : black
+
+rules
+
+	target: hedge 
+		define
+			icon-width : 1:30;14:60;17.5:90
+			shape-mode : center
+			shape-orientation : fixed
+			
+		for : name="National Aquarium"
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\trap-mask.png
+		elsefor : symbol=Airport
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\arabic-door.png
+		elsefor : name=Sunken
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\algae.png
+				icon-width : 1:20;14:50;17.5:100
+		elsefor : name=unnamed
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\architect-mask.png
+		elsefor : name="The Brass Tap"
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\beer-bottle.png
+		// Now if there is no other symbol, default to this one.
+		elsefor : NOT name=Text
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\curly-mask.png
+		draw : icon
+				
+		define
+			text : name
+			//text-align-vertical : far
+			text-offset-horizontal : 10000%
+			font-size : 15
+			font-family : Courier
+			text-color : orange
+			text-halo-color : black
+			text-opacity : 70%
+			text-max-width : 5
+			text-halo-width : 30%
+			text-halo-opacity : 80%
+			text : name
+			
+		for : name="unnamed"
+			stop
+		//draw : text
+		
+	target : building
+		define
+			font-size : 12
+			font-family : Sans Serif
+			min-zoom : 17
+			text-color : orange
+			text-halo-color : black
+			text-opacity : 30%
+			text-max-width : 5
+			text-halo-width : 30%
+			text-halo-opacity : 90%
+			text : name
+			//text : [[addr:housenumber]]
+		draw : text
+		
+		define
+			line-color : white
+			line-width : 0
+			line-opacity : 0%
+			fill-color : #595959
+			fill-opacity : 100%
+			min-zoom: 16
+		draw : fill
+		
+		
+	target : neighborhood
+		define
+			text : name
+			text-color : white
+			text-opacity : 30%
+			text-halo-opacity : 80%
+			text-halo-color : black
+			text-max-width : 7
+			font-size : 10:10;14:12;16:24
+			min-zoom : 14
+			
+		draw : text
+		
+		
+	
+	target : city
+		define
+			//fill-color : #333333
+			fill-color : green
+			fill-opacity : 0%
+			line-width : 2
+			line-color : orange
+			line-style : dash
+			max-zoom : 14
+		draw : fill
+		
+		
+	target : road named
+		define
+			line-color :  #00e64d
+			line-opacity : 20%
+			// Next line specifies that at zoom level 15, the line width will be 3
+			line-width : 15:1;16:3  
+		draw : line
+		
+		define
+			text : name
+			text-align-vertical : near
+			text-color : white
+			text-opacity : 20%
+			text-max-width : 15
+			text-offset-vertical : 70%
+			text-halo-width : 20%
+			text-halo-opacity : 90%
+			text-halo-color : black
+			font-size : 13:10;15:15
+			min-zoom : 16
+		draw : text
+		
+		
+	target : road unnamed
+		define
+			line-color : orange
+			line-opacity : 20%
+			line-width : 1
+			min-zoom : 14
+		draw : line
+
+	target : water
+		define
+			fill-color : #333333
+			line-width : 0
+		draw : fill
+		
+		
+	
+		
