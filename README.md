@@ -2,7 +2,7 @@
  David South
 
 ### What is Maperitive?
-[Maperitive](http://maperitive.net/) is a powerful free tool for accessing OpenStreetMap data and creating maps. It functions differently than most other mapping programs, so here is a quick guide:
+[Maperitive](http://maperitive.net/) is a useful free tool for accessing OpenStreetMap data and creating maps. It functions differently than most other mapping programs, so here is a quick guide:
 * [OpenStreetMap](www.openstreetmap.org) is a massive crowd-sourced worldwide dataset that evolves as users create and edit features. It uses .osm and similar files, based on [specific tags and features](https://wiki.openstreetmap.org/wiki/Map_Features) that the community defines, such as `place=city`, `highway=motorway`, or `natural=hot_spring`. These function very differently than traditional shapefiles, vectors, and rasters, and special methods are required to use these data.  
 * OpenStreetMap data is free to use for personal and commercial projects, with very few restrictions. It is licensed under the [Open Data Commons Open Database License (ODbl)](https://opendatacommons.org/licenses/odbl/). Make sure you don't misuse the license.
 * Read the [Two Minutes Introduction to Maperitive](http://maperitive.net/docs/TwoMinutesIntro.html) then the [Ten Minutes Introduction to Maperitive](http://maperitive.net/docs/TenMinutesIntro.html). The documentation for Maperitive isn't the best, many functions are undocumented or the documentation is incomplete, so beware. You can always search the [Google Group](http://groups.google.com/group/maperitive) for help.

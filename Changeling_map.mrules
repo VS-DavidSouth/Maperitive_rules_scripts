@@ -3,6 +3,7 @@ features
 		// Note that the "Airport" symbol tells Maperitive that a GPSwaypoint
 		// is a door the the hedge.  Also, the format for GPS stuff is a bit different 
 		// than normal OSM tags, so be aware.
+		labels : gpswaypoint[]
 		hedge : gpswaypoint[symbol=Airport]
 		gumdrop : gpswaypoint[NOT symbol=Airport]
 
@@ -16,22 +17,55 @@ features
 		
 	neighborhood : node[place=neighbourhood] area[place=neighbourhood]
 	// Regarding @isOneOf(...), it requires the first to be the general tag, the next two+ to be specific instances.
-	//hedge : 
-	//hedge-b : building=yes  name="National Aquarium"
 	
 
 properties
 	map-background-color : black
-	icon-width : 1:30;14:60;17.5:90
+	icon-width : 1:25;14:50;17.5:80
 	shape-mode : center
 	shape-orientation : fixed
 
 rules
 
-	target: hedge 
+	target : labels
+		define
+			// so as a frustrating workaround for text-offset-vertical not working, I have just added spaces greater than the text-max-width for two lines. It won't count them unless they start with a character, so period was the smallest. Its wonky but it works for now.
+			// To align text right of the icon, use the following and comment out the below alignment sections.
+			//text : ".      " name
+			//text-align-vertical : center
+			//text-align-horizontal : near
+			//text-max-width : 100
+			
+			// Below icon alignment. Comment out right alignment code above to use.
+			text : ".                             .                             " name
+			text-align-vertical : near
+			text-align-horizontal : center
+			text-max-width : 7
+			
+			
+			//text-offset-vertical : -10000 THIS IS USELESS
+			font-size : 1:11;14:12
+			font-family : Courier
+			text-color : orange
+			text-opacity : 90%
+			text-halo-color : black
+			text-halo-width : 30%
+			text-halo-opacity : 90%
+		
+		for : name=unnamed OR comment=unlabeled
+			stop
+		for : @isOneOf(name, "National Aquarium", "Grace United Church of Christ", "Sunken", "Green Mount Cemetery") 
+			define
+				min-zoom : 13.5
+		draw : text
+
+		
+	target : hedge 
 		define	
 			icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\arabic-door.png
 		draw : icon
+		
+
 		
 	target: gumdrop
 		// gumdrop is used to signify places of interest to a potential changeling. 
@@ -48,43 +82,22 @@ rules
 		elsefor : name=Sunken
 			define
 				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\algae.png
-				icon-width : 1:20;14:50;17.5:100
+				icon-width : 1:15;14:30;17.5:80
 		elsefor : name=unnamed
 			define
 				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\architect-mask.png
 		elsefor : name="The Brass Tap"
 			define
 				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\beer-bottle.png
+		elsefor : name="Patterson Park"
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\throne-king.png
+		elsefor : symbol="Animal Tracks"
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\horned-reptile.png
 		draw : icon
 				
-		define
-			// so as a frustrating workaround for text-offset-vertical not working, I have just added spaces greater than the text-max-width for two lines. It won't count them unless they start with a character, so period was the smallest. Its wonky but it works for now.
-			// To align text right of the icon, use the following and comment out the below alignment sections.
-			//text : ".      " name
-			//text-align-vertical : center
-			//text-align-horizontal : near
-			//text-max-width : 100
-			
-			// Below icon alignment. Comment out right alignment code above to use.
-			text : ".                                                           .                                           " name
-			text-align-vertical : near
-			text-align-horizontal : center
-			text-max-width : 9
-			
-			
-			//text-offset-vertical : -10000 THIS IS USELESS
-			font-size : 13
-			font-family : Courier
-			text-color : orange
-			text-opacity : 90%
-			text-halo-color : black
-			text-halo-width : 30%
-			text-halo-opacity : 90%
 
-			
-		for : name="unnamed"
-			stop
-		draw : text
 		
 	target : building
 		define
@@ -98,15 +111,15 @@ rules
 			text-halo-width : 30%
 			text-halo-opacity : 90%
 			text : name
-			//text : [[addr:housenumber]]
 		draw : text
 		
 		define
 			line-color : white
 			line-width : 0
 			line-opacity : 0%
-			fill-color : #595959
-			fill-opacity : 100%
+			//fill-color : #595959
+			fill-color : orange
+			fill-opacity : 10%
 			min-zoom: 16
 		draw : fill
 		
@@ -150,7 +163,7 @@ rules
 			text : name
 			text-align-vertical : near
 			text-color : white
-			text-opacity : 20%
+			text-opacity : 5%
 			text-max-width : 15
 			text-offset-vertical : 70%
 			text-halo-width : 20%
@@ -167,6 +180,7 @@ rules
 			line-opacity : 20%
 			line-width : 1
 			min-zoom : 14
+			max-zoom : 16
 		draw : line
 
 	target : water

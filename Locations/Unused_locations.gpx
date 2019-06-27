@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPS Visualizer Sandbox http://www.gpsvisualizer.com/draw/" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+	<wpt lat="39.2764092" lon="-76.6338444">
+		<name>Waste Management Processing</name>
+	</wpt>
+	<wpt lat="39.3894513" lon="-76.7493939">
+		<name>Woodholme Elementary School</name>
+		<cmt>unlabeled</cmt>
+	</wpt>
+	<wpt lat="39.2559475" lon="-76.6181763">
+		<name>Hanover Street Bridge</name>
+	</wpt>
+	<wpt lat="39.2928267" lon="-76.5550947">
+		<name>Norfolk Rail Yard</name>
+	</wpt>
+</gpx>

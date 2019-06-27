@@ -1,11 +1,12 @@
 ﻿set-geo-bounds -76.7151024726929,39.1951261555912,-76.5256033114624,39.3753104008911
 set-print-bounds-geo
 zoom-bounds
-//export-svg file=output/Changeling_Baltimore.svg compatibility=Inkscape compress=false copy-images=true precision-typo=true
+//zoom-map-scale 14
+//export-svg file=C:\Users\apddsouth\Documents\Maperitive-latest\Maperitive\output\Changeling_Baltimore.svg compatibility=Inkscape compress=false copy-images=true precision-typo=true
    // zoom-bounds=???
    //[map-scale=<map scale>]
    //[scale=<scale>] 
    
-export-bitmap file=output/Changeling_Baltimore.png
+export-bitmap file=C:\Users\apddsouth\Documents\Maperitive-latest\Maperitive\output\Changeling_Baltimore.png dpi=300
    
    
