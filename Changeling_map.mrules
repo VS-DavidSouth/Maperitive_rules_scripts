@@ -54,9 +54,9 @@ rules
 		
 		for : name=unnamed OR comment=unlabeled
 			stop
-		for : @isOneOf(name, "National Aquarium", "Grace United Church of Christ", "Sunken", "Green Mount Cemetery") 
+		for : @isOneOf(name, "National Aquarium", "Cecilia Anne's Apartment", "Grace United Church of Christ", "Sunken", "Green Mount Cemetery") 
 			define
-				min-zoom : 13.5
+				min-zoom : 13
 		draw : text
 
 		
@@ -77,7 +77,7 @@ rules
 			icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\curly-mask.png
 		for : name="National Aquarium"
 			define
-			// Set default image.
+				// Set default image.
 				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\trap-mask.png
 		elsefor : name=Sunken
 			define
@@ -95,6 +95,13 @@ rules
 		elsefor : symbol="Animal Tracks"
 			define
 				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\horned-reptile.png
+		elsefor : name="Nick's Fish House"
+			define
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\bleeding-eye.png
+		// Now pick points that shouldn't display on the full map because it is too crowded.
+		for : @isOneOf(name, "National Aquarium", "Cecilia Anne's Apartment", "Grace United Church of Christ")
+			define
+				min-zoom : 13
 		draw : icon
 				
 

@@ -15,7 +15,6 @@
 	</wpt>
 	<wpt lat="39.2606483" lon="-76.6135776">
 		<name>Nick's Fish House</name>
-		<sym>Airport</sym>
 	</wpt>
 	<wpt lat="39.2145164" lon="-76.5549231">
 		<name>Gypsum Manufacturing</name>
@@ -50,6 +49,7 @@
 	</wpt>
 		<wpt lat="39.2824718" lon="-76.6133787">
 		<name>Jai and Jay's Place</name>
+		<sym>Airport</sym>
 	</wpt>
 	<wpt lat="39.2908629" lon="-76.6106755">
 		<name>Baltimore City Council</name>
