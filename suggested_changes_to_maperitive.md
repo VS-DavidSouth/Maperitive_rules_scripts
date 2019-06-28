@@ -18,6 +18,7 @@ So here are my suggestions for how Maperitive can be further improved.
 * Label collision is really frustrating when you have a perfect map but you can't read some labels because they overlap. Implementing a fix for this would be very helpful.
 * Similar to detecting label overlap, many times I try to export a map and there is a label that is partially cut off by the bounds of the exported image. This makes things look unprofessional and are not aesthetically pleasing. Ideally, there  could be a setting that could be used to tell Maperitive to not draw text/labels which were partially across printing or geometry bounds.
 * It seems like there should be a better way to fix the [disappearing oceans issue](http://maperitive.net/docs/Rendering_Coastlines_And_Sea.html).
+* You have to reload source data to change map-background-color, which at first makes it seem like the parameter doesn't work at all. Time-consuming if you are looking at a big dataset.
 
 ## Documentation Issues
 * A guide to the general syntax of Maperitive would be great. Things like - instead of _, spaces in names are sometimes okay, but also function inputs are separated by spaces not commas, indentation level matters in rulesets, etc. As someone who cut my teeth in Python and R, it was a grind trying to get used to the syntax.

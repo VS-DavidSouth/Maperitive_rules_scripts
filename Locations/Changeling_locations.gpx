@@ -23,9 +23,6 @@
 		<name>Lake Montebello</name>
 		<sym>Airport</sym>
 	</wpt>
-	<wpt lat="39.3067706" lon="-76.6196072">
-		<name>The Brass Tap</name>
-	</wpt>
 	<wpt lat="39.3002361" lon="-76.5706184">
 		<name>unnamed</name>
 	</wpt>
@@ -61,7 +58,7 @@
 		<name>Cecilia Anne's Apartment</name>
 	</wpt>
 	<wpt lat="39.339748" lon="-76.5482169">
-		<name>Nathan's PC's House</name>
+		<name>Riesling's Home</name>
 	</wpt>
 	<wpt lat="39.3455657" lon="-76.5406108">
 		<name>Academy Animal Hospital</name>

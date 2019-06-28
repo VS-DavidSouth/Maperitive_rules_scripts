@@ -73,7 +73,6 @@ rules
 		//		@isOneOf(name, "Mercy Medical Center", "National Aquarium")
 	
 		define
-			fill-opacity : 10%
 			icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\curly-mask.png
 		for : name="National Aquarium"
 			define
@@ -86,9 +85,6 @@ rules
 		elsefor : name=unnamed
 			define
 				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\architect-mask.png
-		elsefor : name="The Brass Tap"
-			define
-				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\beer-bottle.png
 		elsefor : name="Patterson Park"
 			define
 				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\throne-king.png
@@ -97,7 +93,7 @@ rules
 				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\horned-reptile.png
 		elsefor : name="Nick's Fish House"
 			define
-				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\bleeding-eye.png
+				icon-image : C:\Users\apddsouth\Documents\Maperitive-latest\Custom_icons\beer-bottle.png
 		// Now pick points that shouldn't display on the full map because it is too crowded.
 		for : @isOneOf(name, "National Aquarium", "Cecilia Anne's Apartment", "Grace United Church of Christ")
 			define
@@ -140,7 +136,7 @@ rules
 			text-halo-color : black
 			text-max-width : 7
 			font-size : 10:10;14:12;16:24
-			min-zoom : 14
+			min-zoom : 16
 			
 		draw : text
 		
@@ -192,8 +188,9 @@ rules
 
 	target : water
 		define
-			fill-color : #333333
+			fill-color : #00663d
 			line-width : 0
+			line-opacity : 0%
 		draw : fill
 		
 		
