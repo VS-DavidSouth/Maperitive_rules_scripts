@@ -1,5 +1,7 @@
 # Maperitive_rules_scripts
- David South
+David South
+ 
+To see what maps created with this process actually look like, go to the wiki for this repo.
 
 ### What is Maperitive?
 [Maperitive](http://maperitive.net/) is a useful free tool for accessing OpenStreetMap data and creating maps. It functions differently than most other mapping programs, so here is a quick guide:
