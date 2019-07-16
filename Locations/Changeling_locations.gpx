@@ -65,4 +65,8 @@
 		<sym>Animal Tracks</sym>
 		<cmt>unlabeled</cmt>
 	</wpt>
+	<wpt lat="39.2795402" lon="-76.5709734">
+		<name>Club Persephone</name>
+		<sym>Airport</sym>
+	</wpt>
 </gpx>
