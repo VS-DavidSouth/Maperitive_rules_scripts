@@ -21,8 +21,12 @@ So here are my suggestions for how Maperitive can be further improved.
 * You have to reload source data to change map-background-color, which at first makes it seem like the parameter doesn't work at all. Time-consuming if you are looking at a big dataset.
 
 ## Documentation Issues
-* A guide to the general syntax of Maperitive would be great. Things like - instead of _, spaces in names are sometimes okay, but also function inputs are separated by spaces not commas, indentation level matters in rulesets, etc. As someone who cut my teeth in Python and R, it was a grind trying to get used to the syntax.
-* More examples and explanation of the use of conditional logic, like `AND`, `OR`, `FOR`, `ELSEFOR`, `@if`, etc and what situations each can be used.
+* A guide to the general syntax of Maperitive would be great. As someone who cut my teeth in Python and R, it was a grind trying to get used to the syntax via trail and error. For example:
+    * Use `-` instead of `_` when naming things
+    * Sometimes spaces in names are okay
+    * Spaces are also used to separate function inputs, which can be confusing when you are trying to use names with spaces in them
+    * indentation level matters in rulesets, and `for` commands are on the same level as the `define` command
+* It would be useful to have further explanations and examples of the use of conditional logic, like `AND`, `OR`, `FOR`, `ELSEFOR`, `@if`, etc and what situations each can be used.
 * I still am not clear on the actual functional differences between Geometry Bounds and Printing Bounds, and which should be used in which situations. I usually just set them to be the same.
 * The page for [Querying GPS Data](http://maperitive.net/docs/Querying_GPS_Data.html) is very useful. It would be nice if it were explained that to specify tags with GPS stuff, you put it within the brackets when you define a feature, like `gpswaypoint[symbol=Airport]`. That took me quite a while to figure out.
 * It is very unclear exactly what types of non-OSM data can be used in Maperitive. I found that GPS `.gpx` file can, but it would be really helpful to have an extensive list with a documentation page devoted to each.
@@ -30,4 +34,5 @@ So here are my suggestions for how Maperitive can be further improved.
  
 ## Added Functionality
 * It would be nice to be able to have an `icon-opacity` parameter to make them partially transparent. 
+* It would be quite helpful to have a way for users to define their own parameters/variables which could be referenced throughout rulesets. Such as defining something like `theme : color` or  `theme : bw` and then use `@if` or something similar in the script when you define certain colors. Currently, one way I know to do this is either to have one ruleset with multiple similar lines of code with one set commented out, to be manually switched every time. Another way is to have two versions of the ruleset, which is a pain when you make changes to one and then have to go make changes to the other and can cause errors when not done consistantly.
 * A warning could pop up when a user tries to change a ruleset but only has the default base web map in the Map Sources tab. Doubtless virtually all newbie users have made this mistake and were frustrated when it didn't change anything. You learn quickly that the rulesets only apply to downloaded data displayed in Map Sources, but that isn't immediately apparent and I had to do 20 minutes of searching to find why. This could easily drive off potential users who get frustrated and give up on learning to use Maperitive.
